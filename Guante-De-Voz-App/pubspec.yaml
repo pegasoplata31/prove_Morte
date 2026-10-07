@@ -1,0 +1,25 @@
+name: beyond_words
+description: Guante de Voz - Traducción de lengua de señas
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_blue_plus: ^2.3.13
+  flutter_tts: ^4.2.5
+  shared_preferences: ^2.5.3
+  permission_handler: ^12.0.3
+  file_picker: ^8.0.0
+  path_provider: ^2.1.0
+  http: ^1.2.0
+  flutter_gemma: ^0.6.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo.png
