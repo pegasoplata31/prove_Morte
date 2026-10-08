@@ -1,4 +1,4 @@
-name: Build  APK
+name: Build Beyond Words APK
 
 on:
   push:
@@ -8,9 +8,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Guante-De-Voz-App   # 👈 CLAVE: aquí se ejecuta todo
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Debug - Ver estructura
+        run: |
+          echo "=== Directorio actual ==="
+          pwd
+          echo ""
+          echo "=== Contenido ==="
+          ls -la
+          echo ""
+          echo "=== lib/ ==="
+          ls -la lib/
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -34,4 +49,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: beyond-words-release
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: Guante-De-Voz-App/build/app/outputs/flutter-apk/app-release.apk
